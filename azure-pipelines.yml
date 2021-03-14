@@ -108,7 +108,7 @@ stages:
   - deployment: Deploy
     dependsOn: Provision
     variables:
-      WebAppNameDev: $[dependencies.Provision.outputs['RunTerraform.WebAppNameDev']]
+      WebAppNameDev: $[ dependencies.Provision.outputs['RunTerraform.WebAppNameDev'].value ]
       #WebAppNameDev: 'tailspin-space-game-web-dev-8679'
     pool:
       vmImage: 'ubuntu-18.04'
